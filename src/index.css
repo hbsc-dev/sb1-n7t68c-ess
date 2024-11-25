@@ -1,0 +1,249 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* macOS theme variables */
+:root {
+  /* Light theme */
+  --primary: #007AFF;
+  --primary-hover: #0051A8;
+  --secondary: #8E8E93;
+  --accent: #5856D6;
+  --background: #F2F2F7;
+  --card: #FFFFFF;
+  --text-primary: #000000;
+  --text-secondary: #1C1C1E;
+  --text-muted: #8E8E93;
+  --border: #E5E5EA;
+  --input: #F2F2F7;
+  --ring: #D1E4FF;
+  --success: #34C759;
+  --warning: #FF9500;
+  --error: #FF3B30;
+  --info: #5856D6;
+}
+
+/* Dark theme */
+.dark {
+  --primary: #0A84FF;
+  --primary-hover: #409CFF;
+  --secondary: #98989D;
+  --accent: #5E5CE6;
+  --background: #1C1C1E;
+  --card: #2C2C2E;
+  --text-primary: #FFFFFF;
+  --text-secondary: #F5F5F7;
+  --text-muted: #98989D;
+  --border: #38383A;
+  --input: #2C2C2E;
+  --ring: #0A84FF;
+  --success: #30D158;
+  --warning: #FF9F0A;
+  --error: #FF453A;
+  --info: #5E5CE6;
+}
+
+/* Base styles */
+body {
+  @apply antialiased transition-colors duration-200;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--background);
+  color: var(--text-primary);
+}
+
+/* Text sizes based on settings */
+.text-size-small {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.text-size-medium {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.text-size-large {
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* Modern macOS-style components */
+.modern-card {
+  @apply rounded-xl shadow-sm border transition-all duration-200;
+  background-color: var(--card);
+  border-color: var(--border);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.modern-card:hover {
+  @apply shadow-md;
+  transform: translateY(-1px);
+}
+
+/* Form elements */
+.form-input {
+  @apply px-4 py-2 rounded-lg transition-all duration-200;
+  background-color: var(--input);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  height: 42px;
+}
+
+.form-input:focus {
+  @apply outline-none ring-2;
+  border-color: var(--primary);
+  ring-color: var(--ring);
+}
+
+/* Search input specific */
+.search-input {
+  @apply pl-10 pr-4;
+}
+
+/* Buttons */
+.btn-primary {
+  @apply px-4 py-2 rounded-lg shadow-sm transition-all duration-200 font-medium;
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-primary:disabled {
+  @apply opacity-50 cursor-not-allowed transform-none;
+}
+
+.btn-secondary {
+  @apply px-4 py-2 rounded-lg shadow-sm transition-all duration-200 font-medium;
+  background-color: var(--input);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* Table styles */
+table {
+  @apply w-full border-collapse;
+}
+
+th {
+  @apply font-semibold text-left;
+  color: var(--text-secondary);
+}
+
+td, th {
+  @apply px-4 py-2;
+}
+
+tr {
+  @apply transition-colors duration-200;
+}
+
+/* Navigation */
+.bottom-nav {
+  @apply fixed bottom-0 left-0 right-0 backdrop-blur-lg border-t py-2 px-4 transition-colors duration-200;
+  background-color: var(--card);
+  border-color: var(--border);
+  height: 4rem;
+}
+
+/* Settings specific styles */
+.settings-title {
+  @apply text-2xl font-bold;
+  color: var(--text-primary);
+}
+
+.settings-subtitle {
+  @apply text-lg font-medium;
+  color: var(--text-secondary);
+}
+
+.settings-card {
+  @apply modern-card p-6 space-y-6;
+}
+
+/* Theme toggle */
+.theme-toggle {
+  @apply p-2 rounded-lg transition-colors duration-200;
+  background-color: var(--input);
+  color: var(--text-primary);
+}
+
+.theme-toggle:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* Chart customizations */
+.chart-container {
+  @apply bg-opacity-50 rounded-lg p-4;
+  background-color: var(--card);
+}
+
+/* Status badges */
+.status-badge {
+  @apply px-3 py-1 rounded-full text-sm font-medium;
+  background-color: var(--primary);
+  color: white;
+}
+
+/* Links */
+a {
+  color: var(--primary);
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
+.dark a:hover {
+  color: var(--primary-hover);
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+}
+
+/* Labels */
+label {
+  color: var(--text-secondary);
+}
+
+/* Chart text */
+.chart-title, .chart-label {
+  color: var(--text-primary);
+}
+
+/* Table headers */
+thead {
+  background-color: var(--background);
+}
+
+thead th {
+  color: var(--text-secondary);
+}
+
+/* Table cells */
+tbody td {
+  color: var(--text-primary);
+}
+
+/* Card headers */
+.card-header {
+  color: var(--text-primary);
+}
+
+/* Section titles */
+.section-title {
+  color: var(--text-primary);
+}
